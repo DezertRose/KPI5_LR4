@@ -1,0 +1,39 @@
+type Hostel{
+    id:Int
+    name:String
+    street:String
+    numb_of_room: Int
+    state:String
+    faculty:String
+}
+
+type Students{
+    id:Int
+    letters:String
+    numb_of_group:Int
+    faculty:String
+    hostel: Hostel
+    privilege:Int
+    state:String
+    date:String
+}
+
+type User{
+ id: Int
+ faculty: String
+ hostel: Hostel
+ mail: String
+ password: String
+}
+
+type Query{
+    getAllStudents:[Students]
+    getAllUsers:[User]
+    getAllHostels:[Hostel]
+}
+
+type Mutation{
+    createNewUser(faculty:String, hostel_id:Int, mail:String, password:String):User
+    deleteStudents(tempId:Int):String
+    updateHostel(title:String, street:String, id:Int):String
+}
